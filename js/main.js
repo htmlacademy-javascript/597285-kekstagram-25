@@ -2,6 +2,9 @@ import {
   getData,
 } from './api.js';
 import {
+  showFilters,
+} from './filters.js';
+import {
   initializeForm,
 } from './form.js';
 import {
@@ -12,8 +15,12 @@ let gettedPosts;
 
 getData((gettedData) => {
   gettedPosts = gettedData;
-  console.log(gettedPosts);
+  showFilters();
   renderPosts(gettedData);
 });
 
 initializeForm();
+
+export {
+  gettedPosts,
+};

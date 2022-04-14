@@ -1,6 +1,6 @@
 import {
   openBigPictureHandler,
-} from './modal.js';
+} from './open-big.js';
 
 const postTemplate = document.querySelector('#picture').content.querySelector('.picture');
 const postsContainerElement = document.querySelector('.pictures');
@@ -35,6 +35,12 @@ const renderPosts = (gettedPosts) => {
   postsContainerElement.appendChild(postsFragment);
 };
 
+const removePosts = () => {
+  const posts = postsContainerElement.querySelectorAll('.picture');
+  posts.forEach((post) => post.remove());
+};
+
 export {
   renderPosts,
+  removePosts,
 };
