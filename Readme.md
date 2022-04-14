@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Andrey Sviridyuk](https://up.htmlacademy.ru/javascript/25/user/597285).
-* Наставник: `Неизвестно`.
+* Наставник: [Руслан Бреев](https://htmlacademy.ru/profile/id488939).
 
 ---
 
