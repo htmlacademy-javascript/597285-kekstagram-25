@@ -200,12 +200,14 @@ const createFormValidator = () => {
         // если хэштег не удовлетворяет регулярному выражению - валидация не пройдена
         return false;
       }
-
-      if (hashtags.filter((item) => item === hashtag).length > 1) {
-        // если хэштег повторяется - валидация не пройдена
-        return false;
-      }
     }
+
+    // проверка на повторяющиеся хэштеги
+    if (new Set(hashtags).size !== hashtags.length) {
+      // если хэштег повторяется - валидация не пройдена
+      return false;
+    }
+
     // во всех остальных случаях валидация пройдена
     return true;
   };
@@ -231,10 +233,10 @@ const createFormValidator = () => {
 
   // ДОПОЛНИТЕЛЬНЫЕ ФУНКЦИИ
   const blockSubmitButton = () => {
-    submitButtonElement.setAttribute('disabled', '');
+    submitButtonElement.disabled = true;
   };
   const unblockSubmitButton = () => {
-    submitButtonElement.removeAttribute('disabled', '');
+    submitButtonElement.disabled = false;
   };
 
   //ОТПРАВКА ФОРМЫ
